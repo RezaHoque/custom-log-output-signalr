@@ -39,12 +39,7 @@ namespace signalR_log_output.CustomLogger
 
             if (_config.EventId == 0 || _config.EventId == eventId.Id)
             {
-                //var color = Console.ForegroundColor;
-                //Console.ForegroundColor = _config.Color;
-                //Console.WriteLine($"{logLevel.ToString()} - {eventId.Id} - {_name} - {formatter(state, exception)}");
-                //Console.ForegroundColor = color;
-
-                _hubContext.Clients.All.SendAsync("Notification", "My Logger", $"{logLevel.ToString()} - {eventId.Id} - {_name} - {formatter(state, exception)}");
+              _hubContext.Clients.All.SendAsync("Notification", "My Logger", $"{logLevel.ToString()} - {eventId.Id} - {_name} - {formatter(state, exception)}");
             }
         }
     }

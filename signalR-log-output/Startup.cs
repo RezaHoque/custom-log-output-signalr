@@ -50,13 +50,18 @@ namespace signalR_log_output
             loggerFactory.AddProvider(new MyLoggerProvider(new MyLoggerConfiguration
             {
                 LogLevel = LogLevel.Information,
-                Color = ConsoleColor.Blue
+               
             },hubContext));
             loggerFactory.AddProvider(new MyLoggerProvider(new MyLoggerConfiguration
             {
                 LogLevel = LogLevel.Debug,
-                Color = ConsoleColor.DarkYellow
+            
             },hubContext));
+            loggerFactory.AddProvider(new MyLoggerProvider(new MyLoggerConfiguration
+            {
+                LogLevel = LogLevel.Error,
+
+            }, hubContext));
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
