@@ -23,6 +23,13 @@ a {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
+li {
+    list-style: none;
+    padding: 5px;
+    border: 1px solid #e9ecef;
+    background-color: #f8f9fa;
+    margin-bottom:2px;
+}
 
 /* Sticky footer styles
 -------------------------------------------------- */

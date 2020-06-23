@@ -39,8 +39,12 @@ namespace signalR_log_output.CustomLogger
 
             if (_config.EventId == 0 || _config.EventId == eventId.Id)
             {
-              _hubContext.Clients.All.SendAsync("Notification", "My Logger", $"{logLevel.ToString()} - {eventId.Id} - {_name} - {formatter(state, exception)}");
+               var message = $"{DateTime.Now} [{logLevel.ToString()}]  : {_name} - {state}{(exception != null ? "\n" : string.Empty)}{exception}";
+
+              _hubContext.Clients.All.SendAsync("Notification", "My custom Logger", message);
+
             }
         }
+
     }
 }

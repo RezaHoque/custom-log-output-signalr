@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using signalR_log_output.CustomLogger;
+using signalR_log_output.Models;
 
 namespace signalR_log_output.Controllers
 {
@@ -16,7 +18,21 @@ namespace signalR_log_output.Controllers
         }
         public IActionResult Index()
         {
-            _logger.LogError("This is an error", new NullReferenceException());
+            var cust = new Customer();
+
+            try
+            {
+                var address = cust.Address.Length;
+            }catch(Exception ex)
+            {
+               // 
+              // _logger.Log(LogLevel.Error,ex,ex.Message,"Error in the customer page");
+
+                _logger.LogError(ex,"This is my custom error message",null);
+
+            }
+
+          
             return View();
         }
     }

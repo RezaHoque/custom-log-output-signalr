@@ -49,17 +49,17 @@ namespace signalR_log_output
 
             loggerFactory.AddProvider(new MyLoggerProvider(new MyLoggerConfiguration
             {
-                LogLevel = LogLevel.Information,
+                LogLevel = LogLevel.Information
                
             },hubContext));
             loggerFactory.AddProvider(new MyLoggerProvider(new MyLoggerConfiguration
             {
-                LogLevel = LogLevel.Debug,
+                LogLevel = LogLevel.Debug
             
             },hubContext));
             loggerFactory.AddProvider(new MyLoggerProvider(new MyLoggerConfiguration
             {
-                LogLevel = LogLevel.Error,
+                LogLevel = LogLevel.Error
 
             }, hubContext));
 

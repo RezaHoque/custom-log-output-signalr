@@ -26,7 +26,7 @@ namespace signalR_log_output.Controllers
         {
             //await _hubContext.Clients.All.SendAsync("Notification", "System", $"Home page loaded at: {DateTime.Now}");
 
-            _logger.LogInformation("this is test");
+            _logger.LogInformation(null, "This is my beautifull info log message", null);
             return View();
         }
 
